@@ -39,70 +39,70 @@ const Index = () => {
               <div className="space-y-6">
                 <LiveDataPanel />
                 <AlertsPanel />
-              </div>
-            </div>
-
-            {/* Predictive Analytics Preview */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="glass electric-border rounded-lg p-6">
-                <h3 className="font-semibold mb-4 flex items-center gap-2">
-                  <span className="text-blue-400">📊</span>
-                  Load Flow Analysis
-                </h3>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Peak Load Forecast:</span>
-                    <span className="text-primary font-medium">1.2MW</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Network Efficiency:</span>
-                    <span className="text-green-400 font-medium">94.2%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Critical Path:</span>
-                    <span className="text-yellow-400 font-medium">TX-002</span>
+                
+                {/* Load Flow Analysis moved here */}
+                <div className="glass electric-border rounded-lg p-6">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2">
+                    <span className="text-blue-400">📊</span>
+                    Load Flow Analysis
+                  </h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Peak Load Forecast:</span>
+                      <span className="text-primary font-medium">1.2MW</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Network Efficiency:</span>
+                      <span className="text-green-400 font-medium">94.2%</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Critical Path:</span>
+                      <span className="text-yellow-400 font-medium">TX-002</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="glass electric-border rounded-lg p-6">
-                <h3 className="font-semibold mb-4 flex items-center gap-2">
-                  <span className="text-green-400">⚡</span>
-                  Outage Simulation
-                </h3>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Impact Radius:</span>
-                    <span className="text-primary font-medium">2.5km</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Affected Customers:</span>
-                    <span className="text-orange-400 font-medium">1,247</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Recovery Time:</span>
-                    <span className="text-yellow-400 font-medium">45 min</span>
+                {/* Outage Simulation moved here */}
+                <div className="glass electric-border rounded-lg p-6">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2">
+                    <span className="text-green-400">⚡</span>
+                    Outage Simulation
+                  </h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Impact Radius:</span>
+                      <span className="text-primary font-medium">2.5km</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Affected Customers:</span>
+                      <span className="text-orange-400 font-medium">1,247</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Recovery Time:</span>
+                      <span className="text-yellow-400 font-medium">45 min</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="glass electric-border rounded-lg p-6">
-                <h3 className="font-semibold mb-4 flex items-center gap-2">
-                  <span className="text-purple-400">🎯</span>
-                  Optimization
-                </h3>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Load Balance:</span>
-                    <span className="text-green-400 font-medium">Optimal</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Voltage Stability:</span>
-                    <span className="text-green-400 font-medium">98.7%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Energy Savings:</span>
-                    <span className="text-primary font-medium">$2,340</span>
+                {/* Optimization moved here */}
+                <div className="glass electric-border rounded-lg p-6">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2">
+                    <span className="text-purple-400">🎯</span>
+                    Optimization
+                  </h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Load Balance:</span>
+                      <span className="text-green-400 font-medium">Optimal</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Voltage Stability:</span>
+                      <span className="text-green-400 font-medium">98.7%</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Energy Savings:</span>
+                      <span className="text-primary font-medium">$2,340</span>
+                    </div>
                   </div>
                 </div>
               </div>
