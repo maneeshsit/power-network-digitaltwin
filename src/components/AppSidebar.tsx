@@ -2,15 +2,15 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { 
-  activity, 
-  gauge, 
-  monitor, 
-  database, 
-  settings, 
-  bell,
-  chart-line,
-  signal,
-  wifi
+  Activity, 
+  Gauge, 
+  Monitor, 
+  Database, 
+  Settings, 
+  Bell,
+  TrendingUp,
+  Signal,
+  Wifi
 } from "lucide-react";
 
 import {
@@ -27,14 +27,14 @@ import {
 } from "@/components/ui/sidebar";
 
 const navigationItems = [
-  { title: "Network Overview", url: "/", icon: monitor },
-  { title: "Live Monitoring", url: "/monitoring", icon: activity },
-  { title: "Analytics", url: "/analytics", icon: chart-line },
-  { title: "Asset Management", url: "/assets", icon: database },
-  { title: "Control Center", url: "/control", icon: gauge },
-  { title: "Alerts", url: "/alerts", icon: bell },
-  { title: "System Health", url: "/health", icon: signal },
-  { title: "Settings", url: "/settings", icon: settings },
+  { title: "Network Overview", url: "/", icon: Monitor },
+  { title: "Live Monitoring", url: "/monitoring", icon: Activity },
+  { title: "Analytics", url: "/analytics", icon: TrendingUp },
+  { title: "Asset Management", url: "/assets", icon: Database },
+  { title: "Control Center", url: "/control", icon: Gauge },
+  { title: "Alerts", url: "/alerts", icon: Bell },
+  { title: "System Health", url: "/health", icon: Signal },
+  { title: "Settings", url: "/settings", icon: Settings },
 ];
 
 export function AppSidebar() {
@@ -56,7 +56,7 @@ export function AppSidebar() {
       <div className="p-4 border-b border-white/10">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <wifi className="w-4 h-4 text-white" />
+            <Wifi className="w-4 h-4 text-white" />
           </div>
           {!collapsed && (
             <div>
