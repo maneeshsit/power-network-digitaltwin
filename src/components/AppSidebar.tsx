@@ -1,0 +1,93 @@
+
+import { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { 
+  activity, 
+  gauge, 
+  monitor, 
+  database, 
+  settings, 
+  bell,
+  chart-line,
+  signal,
+  wifi
+} from "lucide-react";
+
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarTrigger,
+  useSidebar,
+} from "@/components/ui/sidebar";
+
+const navigationItems = [
+  { title: "Network Overview", url: "/", icon: monitor },
+  { title: "Live Monitoring", url: "/monitoring", icon: activity },
+  { title: "Analytics", url: "/analytics", icon: chart-line },
+  { title: "Asset Management", url: "/assets", icon: database },
+  { title: "Control Center", url: "/control", icon: gauge },
+  { title: "Alerts", url: "/alerts", icon: bell },
+  { title: "System Health", url: "/health", icon: signal },
+  { title: "Settings", url: "/settings", icon: settings },
+];
+
+export function AppSidebar() {
+  const { collapsed } = useSidebar();
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const isActive = (path: string) => currentPath === path;
+  const getNavCls = ({ isActive }: { isActive: boolean }) =>
+    isActive 
+      ? "bg-primary/20 text-primary font-medium border-r-2 border-primary" 
+      : "hover:bg-white/5 text-muted-foreground hover:text-foreground";
+
+  return (
+    <Sidebar
+      className={`${collapsed ? "w-16" : "w-64"} glass-dark border-r border-white/10`}
+      collapsible
+    >
+      <div className="p-4 border-b border-white/10">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+            <wifi className="w-4 h-4 text-white" />
+          </div>
+          {!collapsed && (
+            <div>
+              <h2 className="font-bold text-sm">Grid Digital Twin</h2>
+              <p className="text-xs text-muted-foreground">Distribution Network</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <SidebarContent className="p-2">
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-xs font-medium text-muted-foreground mb-2">
+            {!collapsed && "Navigation"}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {navigationItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <NavLink to={item.url} end className={getNavCls}>
+                      <item.icon className="w-4 h-4 flex-shrink-0" />
+                      {!collapsed && <span className="text-sm">{item.title}</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+    </Sidebar>
+  );
+}
