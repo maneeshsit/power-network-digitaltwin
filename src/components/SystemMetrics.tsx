@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { activity, gauge, wifi, signal } from "lucide-react";
+import { Activity, Gauge, Wifi, Signal } from "lucide-react";
 
 interface Metric {
   id: string;
@@ -15,10 +15,10 @@ interface Metric {
 
 export function SystemMetrics() {
   const [metrics, setMetrics] = useState<Metric[]>([
-    { id: '1', label: 'System Load', value: 78.5, unit: '%', icon: gauge, trend: 'up', color: 'text-blue-400' },
-    { id: '2', label: 'Network Health', value: 95.2, unit: '%', icon: signal, trend: 'stable', color: 'text-green-400' },
-    { id: '3', label: 'Data Throughput', value: 1.2, unit: 'GB/s', icon: wifi, trend: 'up', color: 'text-purple-400' },
-    { id: '4', label: 'Active Alerts', value: 3, unit: 'alerts', icon: activity, trend: 'down', color: 'text-orange-400' },
+    { id: '1', label: 'System Load', value: 78.5, unit: '%', icon: Gauge, trend: 'up', color: 'text-blue-400' },
+    { id: '2', label: 'Network Health', value: 95.2, unit: '%', icon: Signal, trend: 'stable', color: 'text-green-400' },
+    { id: '3', label: 'Data Throughput', value: 1.2, unit: 'GB/s', icon: Wifi, trend: 'up', color: 'text-purple-400' },
+    { id: '4', label: 'Active Alerts', value: 3, unit: 'alerts', icon: Activity, trend: 'down', color: 'text-orange-400' },
   ]);
 
   useEffect(() => {

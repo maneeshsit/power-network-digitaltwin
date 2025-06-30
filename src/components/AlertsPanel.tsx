@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { bell, activity, signal } from "lucide-react";
+import { Bell, Activity, Signal } from "lucide-react";
 
 interface Alert {
   id: string;
@@ -54,10 +54,10 @@ export function AlertsPanel() {
 
   const getAlertIcon = (type: string) => {
     switch (type) {
-      case 'critical': return activity;
-      case 'warning': return signal;
-      case 'info': return bell;
-      default: return bell;
+      case 'critical': return Activity;
+      case 'warning': return Signal;
+      case 'info': return Bell;
+      default: return Bell;
     }
   };
 
@@ -74,7 +74,7 @@ export function AlertsPanel() {
     <Card className="glass electric-border">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <bell className="w-5 h-5" />
+          <Bell className="w-5 h-5" />
           System Alerts
           <Badge variant="secondary" className="bg-red-500/20 text-red-400">
             {alerts.filter(a => !a.acknowledged).length} Unacknowledged
