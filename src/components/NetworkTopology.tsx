@@ -17,6 +17,18 @@ interface NetworkNode {
   lastMaintenance?: string;
   capacity?: number;
   temperature?: number;
+  serialNumber?: string;
+  firmwareVersion?: string;
+  operatingHours?: number;
+  nextMaintenance?: string;
+  efficiency?: number;
+  reliability?: number;
+  vibrationLevel?: string;
+  insulationHealth?: string;
+  powerFactor?: number;
+  harmonics?: number;
+  location?: string;
+  criticality?: 'High' | 'Medium' | 'Low';
 }
 
 const mockNodes: NetworkNode[] = [
@@ -34,7 +46,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2018-03-15',
     lastMaintenance: '2024-01-10',
     capacity: 50,
-    temperature: 65
+    temperature: 65,
+    serialNumber: 'SIE-SGT-2018-001',
+    firmwareVersion: '2.4.1',
+    operatingHours: 52800,
+    nextMaintenance: '2024-07-10',
+    efficiency: 98.5,
+    reliability: 99.8,
+    vibrationLevel: 'Normal',
+    insulationHealth: 'Excellent',
+    powerFactor: 0.95,
+    harmonics: 2.1,
+    location: 'Grid Section A1',
+    criticality: 'High'
   },
   { 
     id: '2', 
@@ -50,7 +74,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2019-07-22',
     lastMaintenance: '2024-02-15',
     capacity: 25,
-    temperature: 58
+    temperature: 58,
+    serialNumber: 'ABB-DTR-2019-045',
+    firmwareVersion: '1.8.2',
+    operatingHours: 41760,
+    nextMaintenance: '2024-08-15',
+    efficiency: 96.8,
+    reliability: 98.9,
+    vibrationLevel: 'Low',
+    insulationHealth: 'Good',
+    powerFactor: 0.92,
+    harmonics: 3.5,
+    location: 'Distribution Hub B',
+    criticality: 'High'
   },
   { 
     id: '3', 
@@ -66,7 +102,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2017-11-08',
     lastMaintenance: '2023-12-05',
     capacity: 20,
-    temperature: 78
+    temperature: 78,
+    serialNumber: 'GE-DTX-2017-123',
+    firmwareVersion: '1.6.5',
+    operatingHours: 58320,
+    nextMaintenance: '2024-06-05',
+    efficiency: 94.2,
+    reliability: 96.5,
+    vibrationLevel: 'Elevated',
+    insulationHealth: 'Fair',
+    powerFactor: 0.88,
+    harmonics: 4.8,
+    location: 'Distribution Hub C',
+    criticality: 'High'
   },
   { 
     id: '4', 
@@ -82,7 +130,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2020-05-12',
     lastMaintenance: '2024-03-01',
     capacity: 15,
-    temperature: 42
+    temperature: 42,
+    serialNumber: 'SCH-EF-2020-067',
+    firmwareVersion: '3.2.1',
+    operatingHours: 35040,
+    nextMaintenance: '2024-09-01',
+    efficiency: 97.5,
+    reliability: 99.2,
+    vibrationLevel: 'Normal',
+    insulationHealth: 'Excellent',
+    powerFactor: 0.94,
+    harmonics: 2.8,
+    location: 'Residential Zone 1',
+    criticality: 'Medium'
   },
   { 
     id: '5', 
@@ -98,7 +158,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2020-05-12',
     lastMaintenance: '2024-03-01',
     capacity: 15,
-    temperature: 45
+    temperature: 45,
+    serialNumber: 'SCH-EF-2020-068',
+    firmwareVersion: '3.2.1',
+    operatingHours: 35040,
+    nextMaintenance: '2024-09-01',
+    efficiency: 96.9,
+    reliability: 98.7,
+    vibrationLevel: 'Normal',
+    insulationHealth: 'Good',
+    powerFactor: 0.93,
+    harmonics: 3.1,
+    location: 'Commercial Zone 1',
+    criticality: 'Medium'
   },
   { 
     id: '6', 
@@ -114,7 +186,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2020-05-12',
     lastMaintenance: '2024-01-15',
     capacity: 15,
-    temperature: 25
+    temperature: 25,
+    serialNumber: 'SCH-EF-2020-069',
+    firmwareVersion: '3.1.8',
+    operatingHours: 34560,
+    nextMaintenance: '2024-07-15',
+    efficiency: 0,
+    reliability: 95.8,
+    vibrationLevel: 'None',
+    insulationHealth: 'Good',
+    powerFactor: 0,
+    harmonics: 0,
+    location: 'Industrial Zone 2',
+    criticality: 'Low'
   },
   { 
     id: '7', 
@@ -130,7 +214,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2021-09-30',
     lastMaintenance: '2024-01-20',
     capacity: 5,
-    temperature: 35
+    temperature: 35,
+    serialNumber: 'ITR-SM-2021-445',
+    firmwareVersion: '4.1.3',
+    operatingHours: 22080,
+    nextMaintenance: '2024-07-20',
+    efficiency: 99.1,
+    reliability: 99.5,
+    vibrationLevel: 'Minimal',
+    insulationHealth: 'Excellent',
+    powerFactor: 0.98,
+    harmonics: 1.2,
+    location: 'Residential Block A',
+    criticality: 'Low'
   },
   { 
     id: '8', 
@@ -146,7 +242,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2021-09-30',
     lastMaintenance: '2024-01-20',
     capacity: 5,
-    temperature: 38
+    temperature: 38,
+    serialNumber: 'ITR-SM-2021-446',
+    firmwareVersion: '4.1.3',
+    operatingHours: 22080,
+    nextMaintenance: '2024-07-20',
+    efficiency: 98.9,
+    reliability: 99.3,
+    vibrationLevel: 'Minimal',
+    insulationHealth: 'Excellent',
+    powerFactor: 0.97,
+    harmonics: 1.4,
+    location: 'Commercial Block B',
+    criticality: 'Low'
   },
   { 
     id: '9', 
@@ -162,7 +270,19 @@ const mockNodes: NetworkNode[] = [
     installDate: '2019-12-10',
     lastMaintenance: '2024-02-28',
     capacity: 12,
-    temperature: 40
+    temperature: 40,
+    serialNumber: 'EAT-VCP-2019-234',
+    firmwareVersion: '2.0.7',
+    operatingHours: 37440,
+    nextMaintenance: '2024-08-28',
+    efficiency: 99.8,
+    reliability: 99.9,
+    vibrationLevel: 'None',
+    insulationHealth: 'Excellent',
+    powerFactor: 1.0,
+    harmonics: 0.5,
+    location: 'Switching Station 1',
+    criticality: 'Medium'
   },
 ];
 
@@ -309,7 +429,7 @@ export function NetworkTopology() {
         <CardHeader>
           <CardTitle>Asset Details</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="max-h-96 overflow-y-auto">
           {selectedNode ? (
             <div className="space-y-6">
               <div className="flex items-center gap-2">
@@ -318,9 +438,18 @@ export function NetworkTopology() {
                   <h3 className="font-semibold">{selectedNode.name}</h3>
                   <p className="text-sm text-muted-foreground capitalize">{selectedNode.type}</p>
                 </div>
+                <Badge 
+                  variant={selectedNode.criticality === 'High' ? 'destructive' : selectedNode.criticality === 'Medium' ? 'default' : 'secondary'}
+                  className="ml-auto"
+                >
+                  {selectedNode.criticality}
+                </Badge>
               </div>
               
+              {/* Real-time Status */}
               <div className="space-y-3">
+                <h4 className="font-medium text-sm border-b border-white/10 pb-1">Real-time Status</h4>
+                
                 <div className="flex justify-between">
                   <span className="text-sm text-muted-foreground">Status:</span>
                   <Badge 
@@ -345,19 +474,15 @@ export function NetworkTopology() {
                   <span className="text-sm font-medium">{selectedNode.voltage.toFixed(1)}V</span>
                 </div>
 
-                {selectedNode.temperature && (
-                  <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Temperature:</span>
-                    <span className="text-sm font-medium">{selectedNode.temperature}°C</span>
-                  </div>
-                )}
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">Temperature:</span>
+                  <span className="text-sm font-medium">{selectedNode.temperature}°C</span>
+                </div>
 
-                {selectedNode.capacity && (
-                  <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Capacity:</span>
-                    <span className="text-sm font-medium">{selectedNode.capacity}MVA</span>
-                  </div>
-                )}
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">Power Factor:</span>
+                  <span className="text-sm font-medium">{selectedNode.powerFactor?.toFixed(2)}</span>
+                </div>
                 
                 <div className="w-full bg-gray-700 rounded-full h-2">
                   <div 
@@ -367,59 +492,111 @@ export function NetworkTopology() {
                 </div>
               </div>
 
-              {/* Asset Information Section */}
-              <div className="space-y-3 pt-4 border-t border-white/10">
-                <h4 className="font-medium text-sm">Asset Information</h4>
+              {/* Asset Information */}
+              <div className="space-y-3">
+                <h4 className="font-medium text-sm border-b border-white/10 pb-1">Asset Information</h4>
                 
-                {selectedNode.manufacturer && (
-                  <div className="flex justify-between">
-                    <span className="text-xs text-muted-foreground">Manufacturer:</span>
-                    <span className="text-xs font-medium">{selectedNode.manufacturer}</span>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <span className="text-muted-foreground">Manufacturer:</span>
+                    <div className="font-medium">{selectedNode.manufacturer}</div>
                   </div>
-                )}
+                  <div>
+                    <span className="text-muted-foreground">Model:</span>
+                    <div className="font-medium">{selectedNode.model}</div>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">Serial Number:</span>
+                    <div className="font-medium text-xs">{selectedNode.serialNumber}</div>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">Firmware:</span>
+                    <div className="font-medium">{selectedNode.firmwareVersion}</div>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">Capacity:</span>
+                    <div className="font-medium">{selectedNode.capacity}MVA</div>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">Location:</span>
+                    <div className="font-medium text-xs">{selectedNode.location}</div>
+                  </div>
+                </div>
 
-                {selectedNode.model && (
-                  <div className="flex justify-between">
-                    <span className="text-xs text-muted-foreground">Model:</span>
-                    <span className="text-xs font-medium">{selectedNode.model}</span>
-                  </div>
-                )}
+                <div className="flex justify-between">
+                  <span className="text-xs text-muted-foreground">Installed:</span>
+                  <span className="text-xs font-medium">{new Date(selectedNode.installDate!).toLocaleDateString()}</span>
+                </div>
 
-                {selectedNode.installDate && (
-                  <div className="flex justify-between">
-                    <span className="text-xs text-muted-foreground">Installed:</span>
-                    <span className="text-xs font-medium">{new Date(selectedNode.installDate).toLocaleDateString()}</span>
-                  </div>
-                )}
+                <div className="flex justify-between">
+                  <span className="text-xs text-muted-foreground">Operating Hours:</span>
+                  <span className="text-xs font-medium">{selectedNode.operatingHours?.toLocaleString()}h</span>
+                </div>
+              </div>
 
-                {selectedNode.lastMaintenance && (
-                  <div className="flex justify-between">
-                    <span className="text-xs text-muted-foreground">Last Maintenance:</span>
-                    <span className="text-xs font-medium">{new Date(selectedNode.lastMaintenance).toLocaleDateString()}</span>
-                  </div>
-                )}
+              {/* Maintenance Information */}
+              <div className="space-y-3">
+                <h4 className="font-medium text-sm border-b border-white/10 pb-1">Maintenance</h4>
+                
+                <div className="flex justify-between">
+                  <span className="text-xs text-muted-foreground">Last Service:</span>
+                  <span className="text-xs font-medium">{new Date(selectedNode.lastMaintenance!).toLocaleDateString()}</span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span className="text-xs text-muted-foreground">Next Service:</span>
+                  <span className="text-xs font-medium text-yellow-400">{new Date(selectedNode.nextMaintenance!).toLocaleDateString()}</span>
+                </div>
               </div>
 
               {/* Health Indicators */}
-              <div className="space-y-3 pt-4 border-t border-white/10">
-                <h4 className="font-medium text-sm">Health Indicators</h4>
+              <div className="space-y-3">
+                <h4 className="font-medium text-sm border-b border-white/10 pb-1">Health Indicators</h4>
                 
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Efficiency:</span>
-                    <span className="text-green-400">94.2%</span>
+                    <span className={selectedNode.efficiency! > 95 ? "text-green-400" : selectedNode.efficiency! > 90 ? "text-yellow-400" : "text-red-400"}>
+                      {selectedNode.efficiency}%
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Reliability:</span>
-                    <span className="text-green-400">99.1%</span>
+                    <span className={selectedNode.reliability! > 98 ? "text-green-400" : selectedNode.reliability! > 95 ? "text-yellow-400" : "text-red-400"}>
+                      {selectedNode.reliability}%
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Vibration:</span>
-                    <span className="text-green-400">Normal</span>
+                    <span className={
+                      selectedNode.vibrationLevel === 'Normal' || selectedNode.vibrationLevel === 'Minimal' || selectedNode.vibrationLevel === 'Low' || selectedNode.vibrationLevel === 'None' 
+                        ? "text-green-400" 
+                        : selectedNode.vibrationLevel === 'Elevated' 
+                        ? "text-yellow-400" 
+                        : "text-red-400"
+                    }>
+                      {selectedNode.vibrationLevel}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Insulation:</span>
-                    <span className="text-yellow-400">Good</span>
+                    <span className={
+                      selectedNode.insulationHealth === 'Excellent' 
+                        ? "text-green-400" 
+                        : selectedNode.insulationHealth === 'Good' 
+                        ? "text-green-400" 
+                        : selectedNode.insulationHealth === 'Fair'
+                        ? "text-yellow-400"
+                        : "text-red-400"
+                    }>
+                      {selectedNode.insulationHealth}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Harmonics:</span>
+                    <span className={selectedNode.harmonics! < 3 ? "text-green-400" : selectedNode.harmonics! < 5 ? "text-yellow-400" : "text-red-400"}>
+                      {selectedNode.harmonics}%
+                    </span>
                   </div>
                 </div>
               </div>
