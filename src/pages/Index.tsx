@@ -6,6 +6,7 @@ import { NetworkTopology } from "@/components/NetworkTopology";
 import { LiveDataPanel } from "@/components/LiveDataPanel";
 import { SystemMetrics } from "@/components/SystemMetrics";
 import { AlertsPanel } from "@/components/AlertsPanel";
+import { DownloadAppFloat } from "@/components/DownloadAppFloat";
 
 const Index = () => {
   return (
@@ -117,6 +118,7 @@ const Index = () => {
           </div>
         </main>
       </div>
+      <DownloadAppFloat />
     </SidebarProvider>
   );
 };
