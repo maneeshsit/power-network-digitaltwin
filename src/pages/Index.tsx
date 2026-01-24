@@ -7,6 +7,7 @@ import { LiveDataPanel } from "@/components/LiveDataPanel";
 import { SystemMetrics } from "@/components/SystemMetrics";
 import { AlertsPanel } from "@/components/AlertsPanel";
 import { DownloadAppFloat } from "@/components/DownloadAppFloat";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const Index = () => {
   return (
@@ -119,6 +120,7 @@ const Index = () => {
         </main>
       </div>
       <DownloadAppFloat />
+      <CookieConsent />
     </SidebarProvider>
   );
 };
